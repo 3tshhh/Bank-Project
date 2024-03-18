@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1710725106 source:c:\users\moham\onedrive\desktop\bank project\bank\main.cpp
+	<iostream>
+	<string>
+	<vector>
+	"Client.h"
+
+1710725139 c:\users\moham\onedrive\desktop\bank project\bank\include\client.h
+
