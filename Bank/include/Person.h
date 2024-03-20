@@ -11,6 +11,7 @@ class Person
 protected:
     int id;
     string name,password;
+
 public:
     Person(){this->id = 0;}
     Person (int id,string name,string password){
