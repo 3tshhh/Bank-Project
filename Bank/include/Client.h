@@ -16,8 +16,6 @@ public:
     this->balance = balance;
     }
 
-
-
 };
 
 #endif
