@@ -3,7 +3,7 @@
 #include "Person.h"
 #include "Validation.h"
 class Client: public Person{
-/*class client
+class client
 {
 	//	atrri
 protected:
