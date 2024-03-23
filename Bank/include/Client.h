@@ -2,79 +2,72 @@
 #define CLIENT_H
 #include "Person.h"
 #include "Validation.h"
+#include <iostream>
+#include <string>
+
+using namespace std;
+
 class Client: public Person{
-class client
-{
 	//	atrri
-protected:
-	int id;
-	string name;
-	string password;
+private:
 	double balance;
 	//conc
 public:
-	client(int id, string name, string password, double balance) {
-		this->id = id;
-		this->name = name;
-		this->password = password;
-		this->balance = balance;
-	}
-	//setters
-	void setId(int id) {
-		this->id = id;
-	}
-	void setName(string name) {
-		this->name = name;
-		if (name.length() >= 5 && name.length() <= 20) {
-			cout << "Name is valid." << endl;
-		}
-		else {
-			cout << "Name must be between 5 and 20 characters." << endl;
-		}
-	}
-	void setPassword(string password) {
-		this->password = password;
-		if (password.length() >= 8 && password.length() <= 20) {
-			cout << "Password is valid." << endl;
-		}
-		else {
-			cout << "Password must be between 8 and 20 characters." << endl;
-		}
-	}
+
+	Client(){
+        balance = 0.0;
+    }
+    Client (string name,string password,int id,double balance):Person(id,name,password)
+    {
+    setBalance(balance);
+    }
+
+
+	//setter
 	void setBalance(double balance) {
-		this->balance = balance;
-		if (balance >= 1500) {
-			cout << "balance is valid" << endl;
-		}
-		else {
-			cout << "the Balance must be more than 1500" << endl;
-		}
+
+		if (Validation::isBalance(balance))
+			this->balance = balance;
+
+		else
+			cout << "the Balance must be more than 1500\n" << endl;
+
 	}
-	//getters
-	int getId() {
-		return id;
-	}
-	string getName() {
-		return name;
-	}
-	string getPassword() {
-		return password;
-	}
+
+	//getter
 	double getBalance() {
 		return balance;
 	}
-};\
 
-private:
-    double balance;
-public:
-    Client(){
-    Balance = 0.0;
+	//Transactions
+    void deposit(double amount){
+        this->balance+=amount;
+        cout<<"Deposit of "<<"500"<<"L.E successful. Your new balance is "<<balance<<"L.E.\n";
     }
-    Client (string name,string password,int id,double balance):
-    {
-    Person::Person(id,name,password);
-    this->balance = balance;
+    void withdraw(double amount){
+        if(Validation::isWithdraw(amount,balance))
+            cout<<"Withdrawal of "<<amount<<"L.E successful. Your new balance is "<<balance<<"L.E.\n";
+        else
+            cout<<"Insufficient funds. Withdrawal of "<<amount<<"L.E failed.\n";
+    }
+    void transferTo(double amount,Client &recipient){
+        if(Validation::isWithdraw(amount,balance)){
+            recipient.deposit(amount);
+            this->balance-=amount;
+            cout<<"Transaction Successful! Your money transfer transaction to "<<recipient.getName()<<" has been completed.\n";
+            cout<<"Your balance is now "<<balance<<"L.E\n";
+        }
+        else
+            cout<<"Incomplete Transaction: Insufficient Funds.\n";
+    }
+    //infoDisplay
+    void checkBalance(){
+        cout<<"Balance is " << getBalance()<<"L.E\n";
+    }
+    void display(){
+        cout<<"Name : "<<getName()<<endl;
+        cout<<"ID   : "<<getId()<<endl;
+        cout<<"balance : "<<getBalance()<<endl;
     }
 
 };
