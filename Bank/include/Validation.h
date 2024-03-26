@@ -37,7 +37,7 @@ public:
             return false;
     }
     static bool isSalary (double salary){
-        if(salary>5000)
+        if(salary>=5000)
             return true;
         else
             return false;

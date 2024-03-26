@@ -65,8 +65,7 @@ public:
         cout<<"Balance is " << getBalance()<<"L.E\n";
     }
     void display(){
-        cout<<"Name : "<<getName()<<endl;
-        cout<<"ID   : "<<getId()<<endl;
+        Person::printinfo();
         cout<<"balance : "<<getBalance()<<endl;
     }
 

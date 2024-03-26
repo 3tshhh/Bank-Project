@@ -49,6 +49,10 @@ public:
 	string getPassword() {
 		return password;
 	}
+	void printinfo() {
+        cout<<"Name : "<<getName()<<endl;
+        cout<<"ID   : "<<getId()<<endl;
+    }
 };
 
 #endif
