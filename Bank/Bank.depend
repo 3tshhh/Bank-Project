@@ -47,3 +47,46 @@
 1710872125 source:c:\users\moham\onedrive\desktop\bank project\bank\src\validation.cpp
 	"Validation.h"
 
+1710894233 source:d:\repo\bank-project\bank\src\admin.cpp
+	"Admin.h"
+
+1712256817 d:\repo\bank-project\bank\include\admin.h
+	"Person.h"
+	"Validation.h"
+	"Employee.h"
+	<iostream>
+	<string>
+
+1712256817 d:\repo\bank-project\bank\include\person.h
+	<iostream>
+	<string>
+	"Validation.h"
+
+1712256817 d:\repo\bank-project\bank\include\validation.h
+	<iostream>
+	<string>
+
+1712256817 d:\repo\bank-project\bank\include\employee.h
+	"Person.h"
+	"Validation.h"
+	<iostream>
+	<string>
+
+1710894233 source:d:\repo\bank-project\bank\src\client.cpp
+	"Client.h"
+
+1712256817 d:\repo\bank-project\bank\include\client.h
+	"Person.h"
+	"Validation.h"
+	<iostream>
+	<string>
+
+1710894233 source:d:\repo\bank-project\bank\src\employee.cpp
+	"Employee.h"
+
+1710894233 source:d:\repo\bank-project\bank\src\person.cpp
+	"Person.h"
+
+1710941237 source:d:\repo\bank-project\bank\src\validation.cpp
+	"Validation.h"
+
