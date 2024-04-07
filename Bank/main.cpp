@@ -11,7 +11,7 @@ using namespace std;
  int main()
 {
     Client c("youusef", "youssefff", 7777, 4000);
-    c.printinfo();
+    c.display();
     cout << "===================" << endl;
     Employee e("mohamed", "sarrrred", 555, 6666);
     e.display();
