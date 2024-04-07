@@ -67,6 +67,7 @@ public:
     void display(){
         Person::printinfo();
         cout<<"balance : "<<getBalance()<<endl;
+        cout << "===================" << endl;
     }
 
 };

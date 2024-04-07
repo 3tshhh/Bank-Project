@@ -35,6 +35,7 @@ public:
     void display(){
         Person::printinfo();
         cout<<"Salary : "<<getSalary()<<endl;
+        cout << "===================" << endl;
     }
 
 };

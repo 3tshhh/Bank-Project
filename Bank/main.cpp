@@ -12,10 +12,10 @@ using namespace std;
 {
     Client c("youusef", "youssefff", 7777, 4000);
     c.display();
-    cout << "===================" << endl;
+
     Employee e("mohamed", "sarrrred", 555, 6666);
     e.display();
-    cout << "===================" << endl;
+
     Admin a("hatem", "mohammmed", 9797, 848484);
     a.display();
 }
