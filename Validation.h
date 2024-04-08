@@ -10,12 +10,13 @@ class Validation
 public:
     static bool isName(string name) {
         if (name.length() >= 5 && name.length() <= 20) {
-            for (int i = 0; i < name.length(); i++) {
-                if (!(name[i] >= 'a' && name[i] <= 'z'))
+            for (auto i : name) {
+                if (!isalpha(i))
                     return false;
             }
-            return true;
+            
         }
+        return true;
     }
     static bool isPass(string password){
         if (password.length() >= 8 && password.length() <= 20) {

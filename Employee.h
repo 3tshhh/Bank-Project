@@ -1,9 +1,8 @@
-#ifndef EMPLOYEE_H
-#define EMPLOYEE_H
-#include "Person.h"
-#include "Validation.h"
+#pragma once 
 #include <iostream>
 #include <string>
+#include "Person.h"
+#include "Validation.h"
 using namespace std;
 
 
@@ -40,4 +39,3 @@ public:
 
 };
 
-#endif
