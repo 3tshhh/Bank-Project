@@ -1,75 +1,70 @@
-#ifndef CLIENT_H
-#define CLIENT_H
+#pragma once
 #include "Person.h"
-#include "Validation.h"
 #include <iostream>
-#include <string>
-
 using namespace std;
 
-class Client: public Person{
-	//	atrri
+class Client : public Person {
+    //	atrri
 private:
-	double balance;
-	//conc
+    double balance;
+    //conc
 public:
 
-	Client(){
+    Client() {
         balance = 0.0;
     }
-    Client (string name,string password,int id,double balance):Person(id,name,password)
+    Client(string name, string password, int id, double balance) :Person(id, name, password)
     {
-    setBalance(balance);
+        setBalance(balance);
     }
 
 
-	//setter
-	void setBalance(double balance) {
+    //setter
+    void setBalance(double balance) {
 
-		if (Validation::isBalance(balance))
-			this->balance = balance;
+        if (Validation::isBalance(balance))
+            this->balance = balance;
 
-		else
-			cout << "the Balance must be more than 1500\n" << endl;
-
-	}
-
-	//getter
-	double getBalance() {
-		return balance;
-	}
-
-	//Transactions
-    void deposit(double amount){
-        this->balance+=amount;
-        cout<<"Deposit of "<<"500"<<"L.E successful. Your new balance is "<<balance<<"L.E.\n";
-    }
-    void withdraw(double amount){
-        if(Validation::isWithdraw(amount,balance))
-            cout<<"Withdrawal of "<<amount<<"L.E successful. Your new balance is "<<balance<<"L.E.\n";
         else
-            cout<<"Insufficient funds. Withdrawal of "<<amount<<"L.E failed.\n";
+            cout << "the Balance must be more than 1500\n" << endl;
+
     }
-    void transferTo(double amount,Client &recipient){
-        if(Validation::isWithdraw(amount,balance)){
+
+    //getter
+    double getBalance() {
+        return balance;
+    }
+
+    //Transactions
+    void deposit(double amount) {
+        this->balance += amount;
+        cout << "Deposit of " << "500" << "L.E successful. Your new balance is " << balance << "L.E.\n";
+    }
+    void withdraw(double amount) {
+        if (Validation::isWithdraw(amount, balance))
+            cout << "Withdrawal of " << amount << "L.E successful. Your new balance is " << balance << "L.E.\n";
+        else
+            cout << "Insufficient funds. Withdrawal of " << amount << "L.E failed.\n";
+    }
+    void transferTo(double amount, Client& recipient) {
+        if (Validation::isWithdraw(amount, balance)) {
             recipient.deposit(amount);
-            this->balance-=amount;
-            cout<<"Transaction Successful! Your money transfer transaction to "<<recipient.getName()<<" has been completed.\n";
-            cout<<"Your balance is now "<<balance<<"L.E\n";
+            this->balance -= amount;
+            cout << "Transaction Successful! Your money transfer transaction to " << recipient.getName() << " has been completed.\n";
+            cout << "Your balance is now " << balance << "L.E\n";
         }
         else
-            cout<<"Incomplete Transaction: Insufficient Funds.\n";
+            cout << "Incomplete Transaction: Insufficient Funds.\n";
     }
     //infoDisplay
-    void checkBalance(){
-        cout<<"Balance is " << getBalance()<<"L.E\n";
+    void checkBalance() {
+        cout << "Balance is " << getBalance() << "L.E\n";
     }
-    void display(){
+    void display() {
         Person::printinfo();
-        cout<<"balance : "<<getBalance()<<endl;
+        cout << "balance : " << getBalance() << endl;
         cout << "===================" << endl;
     }
 
 };
 
-#endif

@@ -1,21 +1,16 @@
-#ifndef ADMIN_H
-#define ADMIN_H
-#include "Person.h"
-#include "Validation.h"
-#include "Employee.h"
+#pragma once
 #include <iostream>
-#include <string>
+#include "Employee.h"
+
 using namespace std;
 
-class Admin : public Employee{
+class Admin : public Employee {
 
 public:
     Admin() {
         this->salary = 0;
     }
 
-    Admin(string name,string password,int id,double salary):Employee(name,password,id,salary){}
+    Admin(string name, string password, int id, double salary) :Employee(name, password, id, salary) {}
 
 };
-
-#endif
