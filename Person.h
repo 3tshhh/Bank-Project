@@ -1,6 +1,5 @@
 #pragma once
 #include <iostream>
-#include <string>
 #include "Validation.h"
 using namespace std;
 
@@ -11,6 +10,7 @@ class Person
 protected:
 	int id;
 	string name, password;
+	
 
 public:
 	Person() { this->id = 0; }

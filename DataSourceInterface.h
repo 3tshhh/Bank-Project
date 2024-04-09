@@ -1,14 +1,14 @@
 #pragma once
-#include "Client.h"
-#include "Employee.h"
-#include "Admin.h"
+#include <iostream>
+#include <string>
+
 
 class DataSourceInterface
 {
 public:
-    virtual void AddClient(Client c) = 0;
-    virtual void AddEmployee(Employee e) = 0;
-    virtual void AddAdmin(Admin a) = 0;
+    virtual void AddClient() = 0;
+    virtual void AddEmployee() = 0;
+    virtual void AddAdmin() = 0;
     virtual void getAllClients() = 0;
     virtual void getAllEmployees() = 0;
     virtual void getAllAdmins() = 0;

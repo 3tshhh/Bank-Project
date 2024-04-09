@@ -1,21 +1,15 @@
 #pragma once
-#include <iostream>
-#include <string>
-#include <fstream>
-#include "DataSourceInterface.h"
 
+#include "DataSourceInterface.h"
 
 
 class FileManager : public DataSourceInterface {
 private:
-    ofstream addClient;
-    ifstream rClient;
 public:
-    FileManager() : addClient("Clients.txt", ios::app), rClient("Clients.txt") {}
+    FileManager() {}
 
-    void addCid(int id) {
-        if (id < 10)
-            addClient << id << "#";
+    void AddClient() {
+        
     }
 };
 

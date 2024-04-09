@@ -14,6 +14,6 @@ int main()
     Employee e("mohamed", "sarrrred", 4, 6666);
     e.display();
 
-    Admin a("hatem", "mohammmed", 7, 500);
+    Admin a("hatem", "mohammmed", 7, 5000);
     a.display();
 }
