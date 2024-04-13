@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include "Person.h"
+
 using namespace std;
 
 
@@ -19,7 +20,7 @@ public:
     }
 
 
-    void setSalary(double salary) {
+    virtual void setSalary(double salary) {
         if (Validation::isSalary(salary)) {
             this->salary = salary;
         }
@@ -29,6 +30,8 @@ public:
     double getSalary() {
         return salary;
     }
+
+    
     void display() {
         Person::printinfo();
         cout << "Salary : " << getSalary() << endl;
