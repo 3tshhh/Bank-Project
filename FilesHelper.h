@@ -1,8 +1,8 @@
 #pragma once
 #include <iostream>
+#include <vector>
 #include <fstream>
 #include <string>
-#include "Client.h"
 #include "Parser.h"
 using namespace std;
 class FilesHelper{
@@ -59,29 +59,21 @@ public:
 	static void getClients() {
 		output.open("Clients.txt");
 
-		vector <Client> clients;
+		
 		while (getline(output, line))
-			clients.push_back(Parser::parseToClient(line));
-		for (auto& i : clients)
-			i.display();
+			allClients.push_back(Parser::parseToClient(line));
 	}
 	static void getEmployees() {
 		output.open("Employees.txt");
 
-		vector <Employee> Employees;
 		while (getline(output, line))
-			Employees.push_back(Parser::parseToEmployee(line));
-		for (auto &i : Employees)
-			i.display();
+			allEmployees.push_back(Parser::parseToEmployee(line));
 	}
 	static void getAdmins() {
 		output.open("Admins.txt");
 
-		vector <Admin> Admins;
 		while (getline(output, line))
-			Admins.push_back(Parser::parseToAdmin(line));
-		for (auto& i : Admins)
-			i.display();
+			allAdmins.push_back(Parser::parseToAdmin(line));
 	}
 	static void clearFile(string filename, string lastid) {
 		ofstream clear;

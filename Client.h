@@ -4,10 +4,10 @@
 using namespace std;
 
 class Client : public Person {
-    //	atrri
+
 private:
     double balance;
-    //conc
+
 public:
 
     Client() {
@@ -19,7 +19,6 @@ public:
     }
 
 
-    //setter
     void setBalance(double balance) {
 
         if (Validation::isBalance(balance))
@@ -29,8 +28,6 @@ public:
             cout << "the Balance must be more than 1500\n" << endl;
 
     }
-
-    //getter
     double getBalance() {
         return balance;
     }
@@ -68,3 +65,4 @@ public:
 
 };
 
+static vector<Client> allClients;

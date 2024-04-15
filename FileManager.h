@@ -28,31 +28,19 @@ public:
     }
 
     vector <Client> getAllClients() {
-        output.open("Clients.txt");
-
-        vector <Client> clients;
-        while (getline(output, line))
-            clients.push_back(Parser::parseToClient(line));
-        return clients;
+        FilesHelper::getClients();
+        return allClients;
     }
 
 
     vector <Employee> getAllEmployees(){
-        output.open("Employees.txt");
-
-        vector <Employee> Employees;
-        while (getline(output, line))
-            Employees.push_back(Parser::parseToEmployee(line));
-        return Employees;
+        FilesHelper::getEmployees();
+        return allEmployees;
     }
 
     vector <Admin> getAllAdmins() {
-        output.open("Admins.txt");
-
-        vector <Admin> Admins;
-        while (getline(output, line))
-            Admins.push_back(Parser::parseToAdmin(line));
-        return Admins;
+        FilesHelper::getAdmins();
+        return allAdmins;
     }
 
     void removeAllClients() { 

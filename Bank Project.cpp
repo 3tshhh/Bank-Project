@@ -2,7 +2,6 @@
 #include "Client.h"
 #include "Employee.h"
 #include "Admin.h"
-//#include "Parser.h"
 #include "FilesHelper.h"
 #define long long ll
 
@@ -24,5 +23,6 @@ int main()
     cout << str;
 
     FilesHelper::saveEmployee(a,stt, str);
+    //e.listClient();
     //FilesHelper::clearFile(stt, str);
 }
