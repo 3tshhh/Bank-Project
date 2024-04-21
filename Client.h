@@ -35,7 +35,7 @@ public:
     //Transactions
     void deposit(double amount) {
         this->balance += amount;
-        cout << "Deposit of " << "500" << "L.E successful. Your new balance is " << balance << "L.E.\n";
+        cout << "Deposit of " << amount << "L.E successful. Your new balance is " << balance << "L.E.\n";
     }
     void withdraw(double amount) {
         if (Validation::isWithdraw(amount, balance))

@@ -28,32 +28,31 @@ public:
 		return stoi(q);
 	}
 	static void saveClient(Client c) {
-
+		int id = getLast("Clientlastid.txt");
 		input.open("Clients.txt", ios::app);
-		input << c.getId() << "#" << c.getBalance() << "#"; 
+		input << ++id << "#" << c.getBalance() << "#"; 
 		input << c.getName() << "#" << c.getPassword() << endl;
 		input.close();
 
-		saveLast("Clientlastid.txt", c.getId());
+		saveLast("Clientlastid.txt", id);
 	}
 	static void saveEmployee(Employee &e,string filename, string lastidfile) {
 		ofstream input;
 		Employee* dad;
-		
+		int id = getLast(filename);
+
 		input.open(filename, ios::app);
 		if(filename[0] == 'E')
 		{
 			dad = new Employee;
-			input << "Employee";
 		}
 		else if(filename[0] == 'A'){
 			dad = new Admin;
-			input << "Admin";
 		}
 		dad = &e;
-		input << dad->getId() << "#" << dad->getSalary() << "#";
+		input << ++id << "#" << dad->getSalary() << "#";
 		input << dad->getName() << "#" << dad->getPassword() << endl;
-		saveLast(lastidfile, dad->getId());
+		saveLast(lastidfile, id);
 		input.close();
 	}
 	static void getClients() {
@@ -62,28 +61,30 @@ public:
 		
 		while (getline(output, line))
 			allClients.push_back(Parser::parseToClient(line));
+		output.close();
 	}
 	static void getEmployees() {
 		output.open("Employees.txt");
 
 		while (getline(output, line))
 			allEmployees.push_back(Parser::parseToEmployee(line));
+		output.close();
 	}
 	static void getAdmins() {
 		output.open("Admins.txt");
 
 		while (getline(output, line))
 			allAdmins.push_back(Parser::parseToAdmin(line));
+		output.close();
 	}
 	static void clearFile(string filename, string lastid) {
-		ofstream clear;
+		fstream clear;
 
-		clear.open(filename);
-		clear.clear();
+		clear.open(filename,ios::out);
 		clear.close();
-
-		clear.open(lastid);
-		clear.clear();
+		
+		clear.open(lastid, ios::out);
+		clear << 0;
 		clear.close();
 	}
 };

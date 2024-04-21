@@ -38,8 +38,6 @@ public:
         s->setSalary(salary);
         s->setName(name);
         s->setPassword(password);
-
-        return;
     }
     void listEmployees() {
         for (auto& i : allEmployees)

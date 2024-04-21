@@ -40,7 +40,7 @@ public:
 
     Client* searchClient(int id) {
         Client s;
-        for(auto &i:allClients)
+        for(Client &i:allClients)
             if (i.getId() == id)
             {
                 return &i;
@@ -49,7 +49,7 @@ public:
     }
 
     void listClient() {
-        for (auto& i : allClients)
+        for (Client& i : allClients)
             i.display();
     }
 
