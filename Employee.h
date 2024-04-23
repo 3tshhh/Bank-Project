@@ -2,7 +2,12 @@
 #include <iostream>
 #include <vector>
 #include "Person.h"
+<<<<<<< Updated upstream
 #include "Parser.h"
+=======
+#include <vector>
+
+>>>>>>> Stashed changes
 using namespace std;
 
 
@@ -66,8 +71,12 @@ public:
         cout << "Salary : " << getSalary() << endl;
         cout << "===================" << endl;
     }
+//<<<<<<< Updated upstream
 
 
+//=======
+//   
+//>>>>>>> Stashed changes
 };
 
 static vector<Employee> allEmployees;

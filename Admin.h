@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 #include "Employee.h"
-
+#include <vector>
 using namespace std;
 
 class Admin : public Employee {
@@ -46,4 +46,14 @@ public:
 
 };
 
+//<<<<<<< Updated upstream
 static vector<Admin> allAdmins;
+//=======
+int main() {
+    Admin admin;
+
+    // Adding a client
+    Client client1 = { 1, "John", "password123", 1000.0 };
+    admin.addClient(client1);
+}
+//>>>>>>> Stashed changes
