@@ -19,11 +19,11 @@ public:
     }
 
 
-    void AddEmployee(Employee &e){
+    void AddEmployee(Employee e){
         FilesHelper::saveEmployee(e, "Employees.txt","Employeelastid.txt" );
     }
 
-    void AddAdmin(Admin &a) {
+    void AddAdmin(Admin a) {
         FilesHelper::saveEmployee(a, "Admins.txt","Adminlastid.txt" );
     }
 

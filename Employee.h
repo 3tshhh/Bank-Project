@@ -2,12 +2,7 @@
 #include <iostream>
 #include <vector>
 #include "Person.h"
-<<<<<<< Updated upstream
-#include "Parser.h"
-=======
-#include <vector>
-
->>>>>>> Stashed changes
+#include "Client.h"
 using namespace std;
 
 
@@ -45,7 +40,7 @@ public:
 
     Client* searchClient(int id) {
         Client s;
-        for(Client &i:allClients)
+        for(auto &i:allClients)
             if (i.getId() == id)
             {
                 return &i;
@@ -54,7 +49,7 @@ public:
     }
 
     void listClient() {
-        for (Client& i : allClients)
+        for (auto& i : allClients)
             i.display();
     }
 
@@ -71,12 +66,8 @@ public:
         cout << "Salary : " << getSalary() << endl;
         cout << "===================" << endl;
     }
-//<<<<<<< Updated upstream
 
 
-//=======
-//   
-//>>>>>>> Stashed changes
 };
 
 static vector<Employee> allEmployees;
